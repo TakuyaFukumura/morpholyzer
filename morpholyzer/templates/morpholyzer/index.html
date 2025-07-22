@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>形態素解析ツール</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+        .analysis-result {
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .morpheme-table th {
+            background-color: #495057;
+            color: white;
+        }
+        .pos-summary {
+            background-color: #e9ecef;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center">🔤 日本語形態素解析ツール</h1>
+            <p class="text-center mb-0">MeCabを使用した高精度な形態素解析</p>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>テキスト入力</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="{{ form.text.id_for_label }}" class="form-label">{{ form.text.label }}</label>
+                                {{ form.text }}
+                                <div class="form-text">{{ form.text.help_text }}</div>
+                                {% if form.text.errors %}
+                                    <div class="text-danger">
+                                        {% for error in form.text.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">🔍 解析実行</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                {% if error_message %}
+                    <div class="error-message mt-3">
+                        <strong>エラー:</strong> {{ error_message }}
+                    </div>
+                {% endif %}
+
+                {% if morphemes %}
+                    <div class="analysis-result">
+                        <h3>解析結果</h3>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="pos-summary">
+                                    <h5>品詞統計</h5>
+                                    <div class="row">
+                                        {% for pos, count in pos_summary.items %}
+                                            <div class="col-6 col-md-4 mb-2">
+                                                <span class="badge bg-secondary">{{ pos }}: {{ count }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pos-summary">
+                                    <h5>解析情報</h5>
+                                    <p><strong>総形態素数:</strong> {{ morphemes|length }}</p>
+                                    <p><strong>入力文字数:</strong> {{ original_text|length }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped morpheme-table">
+                                <thead>
+                                    <tr>
+                                        <th>表層形</th>
+                                        <th>品詞</th>
+                                        <th>品詞細分類1</th>
+                                        <th>品詞細分類2</th>
+                                        <th>活用型</th>
+                                        <th>活用形</th>
+                                        <th>原形</th>
+                                        <th>読み</th>
+                                        <th>発音</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for morpheme in morphemes %}
+                                        <tr>
+                                            <td><strong>{{ morpheme.surface }}</strong></td>
+                                            <td>{{ morpheme.pos }}</td>
+                                            <td>{{ morpheme.pos_detail1 }}</td>
+                                            <td>{{ morpheme.pos_detail2 }}</td>
+                                            <td>{{ morpheme.inflection_type }}</td>
+                                            <td>{{ morpheme.inflection_form }}</td>
+                                            <td>{{ morpheme.base_form }}</td>
+                                            <td>{{ morpheme.reading }}</td>
+                                            <td>{{ morpheme.pronunciation }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">MorpholyzerApp - Powered by Django & MeCab</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
