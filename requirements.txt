@@ -1,0 +1,2 @@
+Django==5.2.4
+mecab-python3==1.0.10

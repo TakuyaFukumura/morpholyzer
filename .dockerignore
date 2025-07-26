@@ -1,0 +1,41 @@
+# Git関連
+.git
+.gitignore
+
+# Python関連
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.pytest_cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Django関連
+.env
+.venv
+db.sqlite3
+media/
+staticfiles/
+
+# 開発環境関連
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# その他
+README.md
+docker-compose.yml
+Dockerfile
