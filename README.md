@@ -41,6 +41,8 @@ Morpholyzerは、日本語テキストを入力すると、MeCabを使用して�
 #### 1. リポジトリのクローン
 ```bash
 git clone https://github.com/TakuyaFukumura/morpholyzer.git
+```
+```bash
 cd morpholyzer
 ```
 
@@ -49,6 +51,8 @@ cd morpholyzer
 **Ubuntu/Debian:**
 ```bash
 sudo apt-get update
+```
+```bash
 sudo apt-get install mecab mecab-ipadic-utf8
 ```
 
@@ -63,6 +67,8 @@ brew install mecab mecab-ipadic
 #### 3. Python仮想環境の作成と有効化
 ```bash
 python3 -m venv venv
+```
+```bash
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
@@ -88,15 +94,18 @@ python manage.py runserver
 #### 1. リポジトリのクローン
 ```bash
 git clone https://github.com/TakuyaFukumura/morpholyzer.git
+```
+```bash
 cd morpholyzer
 ```
 
 #### 2. Dockerコンテナの起動
+- 本番用
 ```bash
-# 本番用
 docker-compose up web
-
-# 開発用（ボリュームマウント付き）
+```
+- 開発用（ボリュームマウント付き）
+```bash
 docker-compose up dev
 ```
 
@@ -112,12 +121,12 @@ docker-compose up dev
 4. 解析結果が表形式で表示されます
 
 ### API使用例
-
+- POSTリクエストで形態素解析を実行
 ```bash
-# POSTリクエストで形態素解析を実行
 curl -X POST http://localhost:8000/api/analyze/ \
   -d "text=これは日本語のテストです。"
-
+```
+```bash
 # レスポンス例
 {
   "success": true,
@@ -147,16 +156,22 @@ curl -X POST http://localhost:8000/api/analyze/ \
 ## 開発
 
 ### テストの実行
+- 全テストの実行
 ```bash
-# 全テストの実行
 python manage.py test
-
-# 特定のアプリのテスト
+```
+- 特定のアプリのテスト
+```bash
 python manage.py test morpholyzer
-
-# カバレッジ付きテスト実行
+```
+- カバレッジ付きテスト実行
+```bash
 pip install coverage
+```
+```bash
 coverage run --source='.' manage.py test morpholyzer
+```
+```bash
 coverage report
 ```
 
@@ -166,14 +181,16 @@ python manage.py runserver
 ```
 
 ### Docker開発環境
+- 開発用コンテナの起動（ファイル変更が自動反映）
 ```bash
-# 開発用コンテナの起動（ファイル変更が自動反映）
 docker-compose up dev
-
-# コンテナ内でのシェル実行
+```
+- コンテナ内でのシェル実行
+```bash
 docker-compose exec dev bash
-
-# テストの実行
+```
+- テストの実行
+```bash
 docker-compose exec dev python manage.py test
 ```
 
@@ -265,27 +282,3 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header
 
 **解決方法:**
 `settings.py`の`ALLOWED_HOSTS`設定を確認してください。
-
-## ライセンス
-
-このプロジェクトはMITライセンスの下で公開されています。
-
-## 貢献
-
-プルリクエストやIssueは歓迎です。以下の手順で開発に参加できます：
-
-1. フォークする
-2. フィーチャーブランチを作成する (`git checkout -b feature/amazing-feature`)
-3. 変更をコミットする (`git commit -m 'Add some amazing feature'`)
-4. ブランチをプッシュする (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成する
-
-## 作者
-
-[TakuyaFukumura](https://github.com/TakuyaFukumura)
-
-## 参考資料
-
-- [Django公式ドキュメント](https://docs.djangoproject.com/)
-- [MeCab公式サイト](https://taku910.github.io/mecab/)
-- [Bootstrap公式ドキュメント](https://getbootstrap.com/docs/)
