@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpholyzer - 日本語形態素解析ツール</title>
-    <meta name="description" content="MeCabを使用した高精度な日本語形態素解析Webアプリケーション。リアルタイムで品詞分析、統計表示、API対応。">
+    <meta name="description"
+          content="MeCabを使用した高精度な日本語形態素解析Webアプリケーション。リアルタイムで品詞分析、統計表示、API対応。">
     <meta name="keywords" content="形態素解析,MeCab,日本語,自然言語処理,NLP,Django,Python">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -215,470 +216,472 @@
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 hero-content">
-                    <h1>🔤 Morpholyzer</h1>
-                    <p class="lead">MeCabを使用した高精度な日本語形態素解析Webアプリケーション</p>
-                    <p class="mb-4">日本語テキストを入力するだけで、詳細な形態素解析結果を瞬時に取得。研究者、開発者、言語学習者に最適な自然言語処理ツールです。</p>
-                    <a href="#demo" class="btn-hero">
-                        <i class="fas fa-play me-2"></i>
-                        デモを見る
-                    </a>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="mt-4 mt-lg-0">
-                        <i class="fas fa-language" style="font-size: 8rem; opacity: 0.3;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Overview -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">主な機能</h2>
-                <p class="section-subtitle">Morpholyzerが提供する強力な機能をご紹介します</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fas fa-brain feature-icon"></i>
-                        <h4>高精度形態素解析</h4>
-                        <p>MeCabエンジンを使用した業界標準の形態素解析。品詞、活用形、読み方まで詳細に分析します。</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fas fa-chart-bar feature-icon"></i>
-                        <h4>視覚的な結果表示</h4>
-                        <p>解析結果を見やすい表形式で表示。品詞統計や詳細情報を一目で確認できます。</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fas fa-mobile-alt feature-icon"></i>
-                        <h4>レスポンシブデザイン</h4>
-                        <p>Bootstrap 5を使用したモバイル対応UI。スマートフォンからデスクトップまで快適に利用できます。</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fas fa-code feature-icon"></i>
-                        <h4>API対応</h4>
-                        <p>JSON形式でデータを取得可能なRESTful API。外部アプリケーションとの連携も簡単です。</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fab fa-docker feature-icon"></i>
-                        <h4>Docker対応</h4>
-                        <p>Dockerコンテナでの簡単デプロイメント。環境構築の手間を大幅に削減できます。</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card text-center">
-                        <i class="fas fa-tachometer-alt feature-icon"></i>
-                        <h4>高速処理</h4>
-                        <p>最適化されたMeCab処理により、大量のテキストも高速で解析。リアルタイム処理に対応。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section id="demo" class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">アプリケーションデモ</h2>
-                <p class="section-subtitle">実際の解析画面をご覧ください</p>
-            </div>
-            
-            <div class="screenshot-container">
-                <h4 class="mb-4">メイン解析画面</h4>
-                
-                <!-- Demo Interface Mock -->
-                <div class="demo-image">
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; margin-bottom: 2rem; border-radius: 10px;">
-                        <h1 class="h3 text-center">🔤 日本語形態素解析ツール</h1>
-                        <p class="text-center mb-0">MeCabを使用した高精度な形態素解析</p>
-                    </div>
-                    
-                    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
-                        <h5>テキスト入力</h5>
-                        <div style="background: #f8f9fa; border: 1px solid #ced4da; border-radius: 4px; padding: 0.75rem; margin: 1rem 0;">
-                            私は今日、美しい桜の花を見ました。
-                        </div>
-                        <button style="background: #007bff; color: white; border: none; padding: 0.75rem 2rem; border-radius: 4px; width: 100%;">
-                            🔍 解析実行
-                        </button>
-                    </div>
-                    
-                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
-                        <h5>解析結果</h5>
-                        <div class="row text-start">
-                            <div class="col-md-6">
-                                <h6>品詞統計</h6>
-                                <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">名詞: 4</span>
-                                <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">助詞: 2</span>
-                                <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">動詞: 1</span>
-                            </div>
-                            <div class="col-md-6">
-                                <h6>解析情報</h6>
-                                <p><strong>総形態素数:</strong> 8</p>
-                                <p><strong>入力文字数:</strong> 18</p>
-                            </div>
-                        </div>
-                        
-                        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem;">
-                            <thead>
-                                <tr style="background: #495057; color: white;">
-                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">表層形</th>
-                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">品詞</th>
-                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">原形</th>
-                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">読み</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>私</strong></td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">名詞</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">私</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">ワタシ</td>
-                                </tr>
-                                <tr style="background: #f8f9fa;">
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>は</strong></td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">助詞</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">は</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">ハ</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>桜</strong></td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">名詞</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">桜</td>
-                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">サクラ</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <p class="text-muted mt-3">
-                    <i class="fas fa-info-circle"></i>
-                    実際の画面では、より詳細な形態素情報（品詞細分類、活用形など）も表示されます
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Specifications -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">技術仕様</h2>
-                <p class="section-subtitle">Morpholyzerの技術的な詳細</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4>技術スタック</h4>
-                    <div class="mb-4">
-                        <span class="tech-badge">Django 5.2.4</span>
-                        <span class="tech-badge">Python 3.12+</span>
-                        <span class="tech-badge">MeCab</span>
-                        <span class="tech-badge">Bootstrap 5.1.3</span>
-                        <span class="tech-badge">SQLite3</span>
-                        <span class="tech-badge">Docker</span>
-                    </div>
-                    
-                    <h4>システム要件</h4>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Python 3.12以上</li>
-                        <li><i class="fas fa-check text-success me-2"></i>MeCab + mecab-ipadic-utf8</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Django 5.2.4</li>
-                        <li><i class="fas fa-check text-success me-2"></i>現代的なWebブラウザ</li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h4>パフォーマンス指標</h4>
-                    <div class="row text-center">
-                        <div class="col-4">
-                            <div class="stat-number">< 100ms</div>
-                            <div class="stat-label">解析速度</div>
-                        </div>
-                        <div class="col-4">
-                            <div class="stat-number">99.9%</div>
-                            <div class="stat-label">解析精度</div>
-                        </div>
-                        <div class="col-4">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">文字対応</div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="mt-4">サポート機能</h4>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-language text-primary me-2"></i>日本語全般対応</li>
-                        <li><i class="fas fa-table text-primary me-2"></i>詳細解析結果表示</li>
-                        <li><i class="fas fa-chart-pie text-primary me-2"></i>品詞統計表示</li>
-                        <li><i class="fas fa-download text-primary me-2"></i>結果エクスポート対応</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Setup Instructions -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">セットアップ方法</h2>
-                <p class="section-subtitle">簡単3ステップで始められます</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4><i class="fab fa-docker text-primary me-2"></i>Docker環境（推奨）</h4>
-                    <p>最も簡単なセットアップ方法です。</p>
-                    
-                    <div class="code-block">
-# リポジトリをクローン
-git clone https://github.com/TakuyaFukumura/morpholyzer.git
-cd morpholyzer
-
-# Dockerで起動
-docker-compose up web
-
-# ブラウザでアクセス
-http://localhost:8000
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h4><i class="fab fa-python text-primary me-2"></i>ローカル環境</h4>
-                    <p>Python環境での直接セットアップ。</p>
-                    
-                    <div class="code-block">
-# MeCabインストール (Ubuntu/Debian)
-sudo apt-get install mecab mecab-ipadic-utf8
-
-# Python依存関係
-pip install -r requirements.txt
-
-# データベース準備
-python manage.py migrate
-
-# サーバー起動
-python manage.py runserver
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="https://github.com/TakuyaFukumura/morpholyzer" class="btn btn-primary btn-lg">
-                    <i class="fab fa-github me-2"></i>
-                    GitHubで詳細を見る
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1>🔤 Morpholyzer</h1>
+                <p class="lead">MeCabを使用した高精度な日本語形態素解析Webアプリケーション</p>
+                <p class="mb-4">
+                    日本語テキストを入力するだけで、詳細な形態素解析結果を瞬時に取得。研究者、開発者、言語学習者に最適な自然言語処理ツールです。</p>
+                <a href="#demo" class="btn-hero">
+                    <i class="fas fa-play me-2"></i>
+                    デモを見る
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- API Documentation -->
-    <section class="api-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">API仕様</h2>
-                <p class="section-subtitle">プログラムから形態素解析機能を利用できます</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card border-0 shadow">
-                        <div class="card-body p-4">
-                            <h4>POST /api/analyze/</h4>
-                            <p class="text-muted mb-4">日本語テキストの形態素解析を実行</p>
-                            
-                            <h5>リクエスト例</h5>
-                            <div class="code-block">
-curl -X POST http://localhost:8000/api/analyze/ \
-  -d "text=これは日本語のテストです。"
-                            </div>
-                            
-                            <h5>レスポンス例</h5>
-                            <div class="code-block">
-{
-  "success": true,
-  "original_text": "これは日本語のテストです。",
-  "morphemes": [
-    {
-      "surface": "これ",
-      "pos": "名詞",
-      "pos_detail1": "代名詞",
-      "base_form": "これ",
-      "reading": "コレ",
-      "pronunciation": "コレ"
-    }
-    // ... 他の形態素
-  ],
-  "pos_summary": {
-    "名詞": 2,
-    "助詞": 2,
-    "助動詞": 1
-  },
-  "total_morphemes": 7
-}
-                            </div>
-                            
-                            <div class="alert alert-info mt-3">
-                                <i class="fas fa-info-circle me-2"></i>
-                                <strong>パラメータ:</strong> text (必須, 最大1000文字の日本語テキスト)
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-4 text-center">
+                <div class="mt-4 mt-lg-0">
+                    <i class="fas fa-language" style="font-size: 8rem; opacity: 0.3;"></i>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Use Cases -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">活用シーン</h2>
-                <p class="section-subtitle">Morpholyzerが活躍する場面</p>
+<!-- Features Overview -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">主な機能</h2>
+            <p class="section-subtitle">Morpholyzerが提供する強力な機能をご紹介します</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h4>高精度形態素解析</h4>
+                    <p>MeCabエンジンを使用した業界標準の形態素解析。品詞、活用形、読み方まで詳細に分析します。</p>
+                </div>
             </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
-                        <h5>言語学習</h5>
-                        <p class="text-muted">日本語学習者の品詞理解をサポート</p>
-                    </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-chart-bar feature-icon"></i>
+                    <h4>視覚的な結果表示</h4>
+                    <p>解析結果を見やすい表形式で表示。品詞統計や詳細情報を一目で確認できます。</p>
                 </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <i class="fas fa-microscope" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
-                        <h5>研究・分析</h5>
-                        <p class="text-muted">言語学研究やテキスト分析</p>
-                    </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h4>レスポンシブデザイン</h4>
+                    <p>Bootstrap 5を使用したモバイル対応UI。スマートフォンからデスクトップまで快適に利用できます。</p>
                 </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <i class="fas fa-robot" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
-                        <h5>AI開発</h5>
-                        <p class="text-muted">自然言語処理システムの前処理</p>
-                    </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h4>API対応</h4>
+                    <p>JSON形式でデータを取得可能なRESTful API。外部アプリケーションとの連携も簡単です。</p>
                 </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <i class="fas fa-book" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
-                        <h5>教育</h5>
-                        <p class="text-muted">日本語教育の補助ツール</p>
-                    </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fab fa-docker feature-icon"></i>
+                    <h4>Docker対応</h4>
+                    <p>Dockerコンテナでの簡単デプロイメント。環境構築の手間を大幅に削減できます。</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-tachometer-alt feature-icon"></i>
+                    <h4>高速処理</h4>
+                    <p>最適化されたMeCab処理により、大量のテキストも高速で解析。リアルタイム処理に対応。</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h4>Morpholyzer</h4>
-                    <p class="mb-4">MeCabを使用した高精度な日本語形態素解析Webアプリケーション。オープンソースで開発され、誰でも自由に利用できます。</p>
-                    
-                    <div class="row">
+<!-- Demo Section -->
+<section id="demo" class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">アプリケーションデモ</h2>
+            <p class="section-subtitle">実際の解析画面をご覧ください</p>
+        </div>
+
+        <div class="screenshot-container">
+            <h4 class="mb-4">メイン解析画面</h4>
+
+            <!-- Demo Interface Mock -->
+            <div class="demo-image">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; margin-bottom: 2rem; border-radius: 10px;">
+                    <h1 class="h3 text-center">🔤 日本語形態素解析ツール</h1>
+                    <p class="text-center mb-0">MeCabを使用した高精度な形態素解析</p>
+                </div>
+
+                <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+                    <h5>テキスト入力</h5>
+                    <div style="background: #f8f9fa; border: 1px solid #ced4da; border-radius: 4px; padding: 0.75rem; margin: 1rem 0;">
+                        私は今日、美しい桜の花を見ました。
+                    </div>
+                    <button style="background: #007bff; color: white; border: none; padding: 0.75rem 2rem; border-radius: 4px; width: 100%;">
+                        🔍 解析実行
+                    </button>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
+                    <h5>解析結果</h5>
+                    <div class="row text-start">
                         <div class="col-md-6">
-                            <h6>技術情報</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="https://github.com/TakuyaFukumura/morpholyzer">GitHub リポジトリ</a></li>
-                                <li><a href="https://docs.djangoproject.com/">Django ドキュメント</a></li>
-                                <li><a href="https://taku910.github.io/mecab/">MeCab 公式サイト</a></li>
-                            </ul>
+                            <h6>品詞統計</h6>
+                            <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">名詞: 4</span>
+                            <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">助詞: 2</span>
+                            <span style="background: #6c757d; color: white; padding: 0.25rem 0.5rem; margin: 0.25rem; border-radius: 12px; display: inline-block; font-size: 0.8rem;">動詞: 1</span>
                         </div>
-                        
                         <div class="col-md-6">
-                            <h6>関連リソース</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="#demo">デモを試す</a></li>
-                                <li><a href="#setup">セットアップガイド</a></li>
-                                <li><a href="#api">API ドキュメント</a></li>
-                            </ul>
+                            <h6>解析情報</h6>
+                            <p><strong>総形態素数:</strong> 8</p>
+                            <p><strong>入力文字数:</strong> 18</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-lg-4 text-lg-end">
-                    <h6>開発・運営</h6>
-                    <p>TakuyaFukumura</p>
-                    <div class="mt-3">
-                        <a href="https://github.com/TakuyaFukumura/morpholyzer" class="me-3">
-                            <i class="fab fa-github fa-2x"></i>
-                        </a>
-                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem;">
+                        <thead>
+                        <tr style="background: #495057; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">表層形</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">品詞</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">原形</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd;">読み</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>私</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">名詞</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">私</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">ワタシ</td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>は</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">助詞</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">は</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">ハ</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>桜</strong></td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">名詞</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">桜</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd;">サクラ</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            
-            <hr class="my-4">
-            
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 Morpholyzer. Open Source Project.</p>
+
+            <p class="text-muted mt-3">
+                <i class="fas fa-info-circle"></i>
+                実際の画面では、より詳細な形態素情報（品詞細分類、活用形など）も表示されます
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Technical Specifications -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">技術仕様</h2>
+            <p class="section-subtitle">Morpholyzerの技術的な詳細</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h4>技術スタック</h4>
+                <div class="mb-4">
+                    <span class="tech-badge">Django 5.2.4</span>
+                    <span class="tech-badge">Python 3.12+</span>
+                    <span class="tech-badge">MeCab</span>
+                    <span class="tech-badge">Bootstrap 5.1.3</span>
+                    <span class="tech-badge">SQLite3</span>
+                    <span class="tech-badge">Docker</span>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Powered by Django & MeCab</p>
+
+                <h4>システム要件</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>Python 3.12以上</li>
+                    <li><i class="fas fa-check text-success me-2"></i>MeCab + mecab-ipadic-utf8</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Django 5.2.4</li>
+                    <li><i class="fas fa-check text-success me-2"></i>現代的なWebブラウザ</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>パフォーマンス指標</h4>
+                <div class="row text-center">
+                    <div class="col-4">
+                        <div class="stat-number">< 100ms</div>
+                        <div class="stat-label">解析速度</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">解析精度</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">文字対応</div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">サポート機能</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-language text-primary me-2"></i>日本語全般対応</li>
+                    <li><i class="fas fa-table text-primary me-2"></i>詳細解析結果表示</li>
+                    <li><i class="fas fa-chart-pie text-primary me-2"></i>品詞統計表示</li>
+                    <li><i class="fas fa-download text-primary me-2"></i>結果エクスポート対応</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Setup Instructions -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">セットアップ方法</h2>
+            <p class="section-subtitle">簡単3ステップで始められます</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h4><i class="fab fa-docker text-primary me-2"></i>Docker環境（推奨）</h4>
+                <p>最も簡単なセットアップ方法です。</p>
+
+                <div class="code-block">
+                    # リポジトリをクローン
+                    git clone https://github.com/TakuyaFukumura/morpholyzer.git
+                    cd morpholyzer
+
+                    # Dockerで起動
+                    docker-compose up web
+
+                    # ブラウザでアクセス
+                    http://localhost:8000
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h4><i class="fab fa-python text-primary me-2"></i>ローカル環境</h4>
+                <p>Python環境での直接セットアップ。</p>
+
+                <div class="code-block">
+                    # MeCabインストール (Ubuntu/Debian)
+                    sudo apt-get install mecab mecab-ipadic-utf8
+
+                    # Python依存関係
+                    pip install -r requirements.txt
+
+                    # データベース準備
+                    python manage.py migrate
+
+                    # サーバー起動
+                    python manage.py runserver
                 </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Smooth Scrolling -->
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        <div class="text-center mt-4">
+            <a href="https://github.com/TakuyaFukumura/morpholyzer" class="btn btn-primary btn-lg">
+                <i class="fab fa-github me-2"></i>
+                GitHubで詳細を見る
+            </a>
+        </div>
+    </div>
+</section>
 
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function() {
-            const heroSection = document.querySelector('.hero');
-            const heroHeight = heroSection.offsetHeight;
-            
-            if (window.scrollY > heroHeight * 0.5) {
-                document.body.classList.add('scrolled');
-            } else {
-                document.body.classList.remove('scrolled');
+<!-- API Documentation -->
+<section class="api-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">API仕様</h2>
+            <p class="section-subtitle">プログラムから形態素解析機能を利用できます</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h4>POST /api/analyze/</h4>
+                        <p class="text-muted mb-4">日本語テキストの形態素解析を実行</p>
+
+                        <h5>リクエスト例</h5>
+                        <div class="code-block">
+                            curl -X POST http://localhost:8000/api/analyze/ \
+                            -d "text=これは日本語のテストです。"
+                        </div>
+
+                        <h5>レスポンス例</h5>
+                        <div class="code-block">
+                            {
+                            "success": true,
+                            "original_text": "これは日本語のテストです。",
+                            "morphemes": [
+                            {
+                            "surface": "これ",
+                            "pos": "名詞",
+                            "pos_detail1": "代名詞",
+                            "base_form": "これ",
+                            "reading": "コレ",
+                            "pronunciation": "コレ"
+                            }
+                            // ... 他の形態素
+                            ],
+                            "pos_summary": {
+                            "名詞": 2,
+                            "助詞": 2,
+                            "助動詞": 1
+                            },
+                            "total_morphemes": 7
+                            }
+                        </div>
+
+                        <div class="alert alert-info mt-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>パラメータ:</strong> text (必須, 最大1000文字の日本語テキスト)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">活用シーン</h2>
+            <p class="section-subtitle">Morpholyzerが活躍する場面</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h5>言語学習</h5>
+                    <p class="text-muted">日本語学習者の品詞理解をサポート</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-microscope" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h5>研究・分析</h5>
+                    <p class="text-muted">言語学研究やテキスト分析</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-robot" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h5>AI開発</h5>
+                    <p class="text-muted">自然言語処理システムの前処理</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-book" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h5>教育</h5>
+                    <p class="text-muted">日本語教育の補助ツール</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h4>Morpholyzer</h4>
+                <p class="mb-4">
+                    MeCabを使用した高精度な日本語形態素解析Webアプリケーション。オープンソースで開発され、誰でも自由に利用できます。</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>技術情報</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/TakuyaFukumura/morpholyzer">GitHub リポジトリ</a></li>
+                            <li><a href="https://docs.djangoproject.com/">Django ドキュメント</a></li>
+                            <li><a href="https://taku910.github.io/mecab/">MeCab 公式サイト</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h6>関連リソース</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#demo">デモを試す</a></li>
+                            <li><a href="#setup">セットアップガイド</a></li>
+                            <li><a href="#api">API ドキュメント</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-lg-end">
+                <h6>開発・運営</h6>
+                <p>TakuyaFukumura</p>
+                <div class="mt-3">
+                    <a href="https://github.com/TakuyaFukumura/morpholyzer" class="me-3">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="mb-0">&copy; 2024 Morpholyzer. Open Source Project.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0">Powered by Django & MeCab</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth Scrolling -->
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    </script>
+    });
+
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+        const heroSection = document.querySelector('.hero');
+        const heroHeight = heroSection.offsetHeight;
+
+        if (window.scrollY > heroHeight * 0.5) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+    });
+</script>
 </body>
 </html>
