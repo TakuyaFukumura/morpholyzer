@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpholyzer - 日本語形態素解析ツール</title>
     <meta name="description"
-          content="MeCabを使用した高精度な日本語形態素解析Webアプリケーション。リアルタイムで品詞分析、統計表示、API対応。">
+          content="MeCabを使用した日本語形態素解析Webアプリケーション。">
     <meta name="keywords" content="形態素解析,MeCab,日本語,自然言語処理,NLP,Django,Python">
 
     <!-- Bootstrap CSS -->
@@ -222,9 +222,9 @@
         <div class="row align-items-center">
             <div class="col-lg-8 hero-content">
                 <h1>🔤 Morpholyzer</h1>
-                <p class="lead">MeCabを使用した高精度な日本語形態素解析Webアプリケーション</p>
+                <p class="lead">日本語形態素解析Webアプリケーション</p>
                 <p class="mb-4">
-                    日本語テキストを入力するだけで、詳細な形態素解析結果を瞬時に取得。研究者、開発者、言語学習者に最適な自然言語処理ツールです。</p>
+                    日本語テキストを入力するだけで詳細な形態素解析結果を瞬時に取得</p>
                 <a href="#demo" class="btn-hero">
                     <i class="fas fa-play me-2"></i>
                     デモを見る
@@ -244,7 +244,7 @@
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="section-title">主な機能</h2>
-            <p class="section-subtitle">Morpholyzerが提供する強力な機能をご紹介します</p>
+            <p class="section-subtitle">Morpholyzerが提供する機能をご紹介します</p>
         </div>
 
         <div class="row g-4">
@@ -252,7 +252,7 @@
                 <div class="feature-card text-center">
                     <i class="fas fa-brain feature-icon"></i>
                     <h4>高精度形態素解析</h4>
-                    <p>MeCabエンジンを使用した業界標準の形態素解析。品詞、活用形、読み方まで詳細に分析します。</p>
+                    <p>MeCabエンジンを使用した形態素解析。品詞、活用形、読み方まで詳細に分析します。</p>
                 </div>
             </div>
 
@@ -292,7 +292,7 @@
                 <div class="feature-card text-center">
                     <i class="fas fa-tachometer-alt feature-icon"></i>
                     <h4>高速処理</h4>
-                    <p>最適化されたMeCab処理により、大量のテキストも高速で解析。リアルタイム処理に対応。</p>
+                    <p>大量のテキストも高速で解析。リアルタイム処理に対応。</p>
                 </div>
             </div>
         </div>
@@ -456,14 +456,14 @@
                 <p>最も簡単なセットアップ方法です。</p>
 
                 <div class="code-block">
-                    # リポジトリをクローン
-                    git clone https://github.com/TakuyaFukumura/morpholyzer.git
-                    cd morpholyzer
-
-                    # Dockerで起動
-                    docker-compose up web
-
-                    # ブラウザでアクセス
+                    # リポジトリをクローン<br>
+                    git clone https://github.com/TakuyaFukumura/morpholyzer.git<br>
+                    cd morpholyzer<br>
+                    <br>
+                    # Dockerで起動<br>
+                    docker-compose up web<br>
+                    <br>
+                    # ブラウザでアクセス<br>
                     http://localhost:8000
                 </div>
             </div>
@@ -473,16 +473,16 @@
                 <p>Python環境での直接セットアップ。</p>
 
                 <div class="code-block">
-                    # MeCabインストール (Ubuntu/Debian)
-                    sudo apt-get install mecab mecab-ipadic-utf8
-
-                    # Python依存関係
-                    pip install -r requirements.txt
-
-                    # データベース準備
-                    python manage.py migrate
-
-                    # サーバー起動
+                    # MeCabインストール (Ubuntu/Debian)<br>
+                    sudo apt-get install mecab mecab-ipadic-utf8<br>
+                    <br>
+                    # Python依存関係<br>
+                    pip install -r requirements.txt<br>
+                    <br>
+                    # データベース準備<br>
+                    python manage.py migrate<br>
+                    <br>
+                    # サーバー起動<br>
                     python manage.py runserver
                 </div>
             </div>
